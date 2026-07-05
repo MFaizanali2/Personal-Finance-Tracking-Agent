@@ -1,5 +1,5 @@
 import BudgetSetup from '@/components/BudgetSetup';
-import BudgetDashboard from '@/components/BudgetDashboard';
+import BudgetDashboard from '@/components/budgets/BudgetDashboard';
 
 export default function BudgetPage() {
   return (

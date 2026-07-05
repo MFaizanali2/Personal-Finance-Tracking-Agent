@@ -1,5 +1,5 @@
-import GoalForm from '@/components/GoalForm';
-import GoalDashboard from '@/components/GoalDashboard';
+import GoalForm from '@/components/goals/GoalForm';
+import GoalDashboard from '@/components/goals/GoalDashboard';
 
 export default function GoalsPage() {
   return (
