@@ -1,7 +1,14 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Wallet, List, Cpu, Target, DollarSign, Bell } from 'lucide-react';
 
-const navItems = [
+interface NavItem {
+  to: string;
+  label: string;
+  icon: React.FC<{ size?: number }>;
+}
+
+const navItems: NavItem[] = [
   { to: '/', label: 'Dashboard', icon: Wallet },
   { to: '/transactions', label: 'Transactions', icon: List },
   { to: '/goals', label: 'Goals', icon: Target },
@@ -10,7 +17,11 @@ const navItems = [
   { to: '/agent', label: 'Agent', icon: Cpu },
 ];
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40">

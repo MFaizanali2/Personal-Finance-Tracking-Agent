@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import useStore from '@/store';
 
+interface ToastData {
+  message: string;
+  type: 'success' | 'error' | 'info';
+}
+
 export default function Toast() {
-  const toast = useStore((s) => s.toast);
-  const clearToast = useStore((s) => s.clearToast);
+  const toast = useStore((s: { toast: ToastData | null }) => s.toast) as ToastData | null;
+  const clearToast = useStore((s: { clearToast: () => void }) => s.clearToast) as () => void;
 
   useEffect(() => {
     if (toast) {
